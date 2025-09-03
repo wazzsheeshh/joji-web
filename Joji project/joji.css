@@ -1,0 +1,528 @@
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+/* Smooth scroll di semua halaman */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* NAVBAR */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  background: rgba(255, 255, 255, 0.05); /* hampir bening */
+  color: #D4AF37; /* teks tetap kontras */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #D4AF37;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* garis bawah animasi */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #000000;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #000000;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* HERO LANDING */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  height: 100vh;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  animation: popup 1.2s ease forwards;
+  opacity: 0;
+}
+
+.hero-img img {
+  width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  color: #D4AF37;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  max-width: 500px;
+}
+
+/* ABOUT */
+.about {
+  padding: 80px 50px;
+  background: #eaf2ff;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  color: #D4AF37;
+  margin-bottom: 20px;
+}
+
+/* TICKET */
+.ticket {
+  padding: 80px 50px;
+  text-align: center;
+}
+
+.ticket h2 {
+  color: #D4AF37;
+  margin-bottom: 15px;
+}
+
+.buy-btn {
+  padding: 12px 25px;
+  background: #D4AF37;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buy-btn:hover {
+  background: #D4AF37;
+  transform: scale(1.05);
+}
+
+/* MODAL CONTACT */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: white;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.close {
+  float: right;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.contact-options {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-btn {
+  padding: 10px;
+  background:#D4AF37;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: #D4AF37;
+}
+
+/* ABOUT PAGE */
+.about-page {
+  padding: 120px 50px 60px 50px;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+.about-page h1 {
+  color: #D4AF37;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-page h2 {
+  margin-top: 40px;
+  color: #D4AF37;
+}
+
+.about-page ul {
+  margin: 20px 0 20px 20px;
+}
+
+.about-page .about-img {
+  display: block;
+  margin: 25px auto;
+  width: 70%;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.about-page .closing-text {
+  margin-top: 40px;
+  font-style: italic;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* CONTACT MODAL SPACING */
+.modal-content p {
+  margin-bottom: 25px; /* lebih jauh dari sebelumnya */
+}
+
+.contact-options {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* jarak antar tombol lebih lega */
+}
+
+.contact-btn i {
+  margin-right: 8px;
+}
+
+/* Biar konten ga ketiban navbar */
+.about-page {
+  padding: 140px 50px 60px 50px; /* tambah padding-top lebih gede */
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+/* Gambar biar responsif */
+.about-page .about-img {
+  display: block;
+  margin: 25px auto;
+  max-width: 80%;   /* biar ga kebesaran */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.about-page p, 
+.about-page ul {
+  max-width: 750px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+
+
+/* ANIMASI */
+@keyframes popup {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Animasi dasar */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Terapkan ke konten about */
+.about-page h1,
+.about-page h2,
+.about-page p,
+.about-page ul,
+.about-page .about-img {
+  opacity: 0; /* awalnya sembunyi */
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* Delay biar muncul bergantian */
+.about-page h1 { animation-delay: 0.2s; }
+.about-page p { animation-delay: 0.4s; }
+.about-page .about-img { animation-delay: 0.6s; }
+.about-page h2 { animation-delay: 0.8s; }
+.about-page ul { animation-delay: 1s; }
+
+.spotify-bar {
+  position: fixed;
+  bottom: -120px;
+  left: 20px;
+  right: 20px;
+  height: 80px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-family: Arial, sans-serif;
+
+  /* stronger glassmorphism */
+  backdrop-filter: blur(18px) saturate(200%);
+  -webkit-backdrop-filter: blur(18px) saturate(200%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0.06) 40%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.35),      /* drop shadow for depth */
+    inset 0 1px 0 rgba(255,255,255,0.06);  /* subtle inner highlight */
+  border-radius: 12px;
+
+  color: #000000;
+  overflow: hidden; /* buat pseudo elemen tidak meluber */
+  transition: bottom 0.6s ease, opacity 0.6s ease, transform 0.35s ease;
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+/* glossy highlight overlay */
+.spotify-bar::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  top: 8px;
+  height: 38%;
+  border-radius: 10px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.45) 0%,
+    rgba(255,255,255,0.14) 35%,
+    rgba(255,255,255,0.02) 100%
+  );
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0.95;
+}
+
+/* thin glossy rim at the very top */
+.spotify-bar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.9),
+    rgba(255,255,255,0.2)
+  );
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.spotify-bar.show {
+  opacity: 1; /* jadi keliatan */
+  bottom: 20px; /* posisi normal */
+}
+
+
+.spotify-bar img.cover {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.track-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.track-meta h4 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.track-meta p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #b3b3b3;
+}
+
+.track-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+}
+
+.controls {
+  display: flex;
+  gap: 14px;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+}
+
+.controls button img {
+  width: 100%;
+  height: 100%;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  width: 50%;
+}
+
+.progress input[type="range"] {
+  flex: 1;
+  cursor: pointer;
+}
+
+.track-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.track-right input[type="range"] {
+  width: 100px;
+}
+
+/* Slider thumb (cuma titiknya jadi hitam) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background: #000000; /* hitam */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: #000000; /* hitam */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Hilangkan kotak di ikon volume */
+#volumeIcon {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Slider: ubah thumb jadi hitam */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: #ccc; /* warna garis */
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Untuk Chrome, Edge, Safari */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #000; /* titik hitam */
+  border-radius: 50%;
+  border: 2px solid #000; /* biar tebel dikit */
+  cursor: pointer;
+}
+
+/* Untuk Firefox */
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: #000;
+  border-radius: 50%;
+  border: 2px solid #000;
+  cursor: pointer;
+}

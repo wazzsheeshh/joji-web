@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Joji</title>
+  <link rel="stylesheet" href="joji.css">
+  <!-- Font Awesome buat icon email & instagram -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo">MyJoji.</div>
+    <nav>
+      <ul>
+        <li><a href="Joji.html">Home</a></li>
+        <li><a href="about.html" class="active">About Joji</a></li>
+        <li><a href="https://open.spotify.com/artist/3MZsBdqDrRTJihTHQrO6Dq" target="_blank">Lagu</a></li>
+        <li><a href="https://www.ticketmaster.com/joji-tickets/artist/2503150">Tiket Konser</a></li>
+        <li><a href="#" id="contactBtn">Contact Me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ABOUT JOJI -->
+  <section class="about-page">
+    <h1>About Joji</h1>
+    <p>
+      Joji, nama asli George Kusunoki Miller, lahir di Osaka, Jepang pada 18 September 1992. 
+      Sebelum dikenal sebagai musisi, Joji memulai karirnya di internet dengan nama panggung 
+      "Filthy Frank" dan "Pink Guy", yang terkenal dengan konten komedi absurd di YouTube.
+    </p>
+
+    <img src="joji-young.jpg" alt="Joji muda" class="about-img">
+
+    <h2>Perjalanan Karir</h2>
+    <p>
+      Pada tahun 2017, Joji memutuskan untuk meninggalkan dunia YouTube dan fokus ke musik. 
+      Keputusannya ini membuahkan hasil besar ketika ia merilis karya-karya dengan nuansa 
+      R&B, lo-fi, dan soul. Musiknya dikenal emosional, melankolis, namun penuh keindahan.
+    </p>
+
+    <img src="joji-singing.jpg" alt="Joji sedang bernyanyi" class="about-img">
+
+    <h2>Album dan Lagu Terkenal</h2>
+    <ul>
+      <li><strong>Ballads 1 (2018)</strong> – Album debut yang langsung menempati posisi puncak Billboard R&B.</li>
+      <li><strong>Nectar (2020)</strong> – Menampilkan hits seperti "Sanctuary" dan "Run".</li>
+      <li><strong>Smithereens (2022)</strong> – Album penuh emosi dengan lagu populer "Glimpse of Us".</li>
+    </ul>
+
+    <img src="joji-album.jpg" alt="Cover album Joji" class="about-img">
+
+    <h2>Gaya Musik</h2>
+    <p>
+      Joji menggabungkan elemen-elemen R&B, soul, lo-fi hip hop, dan indie. 
+      Suaranya yang khas serta lirik-lirik penuh perasaan membuatnya 
+      menjadi ikon baru di dunia musik alternatif.
+    </p>
+
+    <h2>Fakta Menarik</h2>
+    <ul>
+      <li>Joji fasih berbahasa Jepang dan Inggris.</li>
+      <li>Pernah viral dengan tarian "Harlem Shake" saat masih di YouTube.</li>
+      <li>Memiliki fandom loyal yang menyebut dirinya "Joji’s Sanctuary".</li>
+    </ul>
+
+    <p class="closing-text">
+      Kini, Joji terus berkarya dengan menciptakan musik yang menyentuh hati jutaan pendengar di seluruh dunia.
+    </p>
+  </section>
+
+  <!-- CONTACT MODAL -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Contact Me</h2>
+      <p style="margin-bottom:20px;">Pilih cara menghubungi:</p>
+      <div class="contact-options">
+        <a href="mailto:joji@example.com" class="contact-btn">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+        <a href="https://instagram.com/sushitrash" target="_blank" class="contact-btn">
+          <i class="fab fa-instagram"></i> Instagram
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Modal Contact
+    const modal = document.getElementById("contactModal");
+    const btn = document.getElementById("contactBtn");
+    const span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = () => { modal.style.display = "block"; }
+    span.onclick = () => { modal.style.display = "none"; }
+    window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }
+  </script>
+  <script>
+  
+</script>
+</body>
+</html>

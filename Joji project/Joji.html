@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyJoji</title>
+  <link rel="stylesheet" href="joji.css">
+  <style type="text/css">
+    body {
+      background-image: url('images/background.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo">MyJoji.</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="about.html">About Joji</a></li>
+        <li><a href="https://open.spotify.com/artist/3MZsBdqDrRTJihTHQrO6Dq" target="_blank">Lagu</a></li>
+        <li><a href="https://www.ticketmaster.com/joji-tickets/artist/2503150">Tiket Konser</a></li>
+        <li><a href="#" id="contactBtn">Contact Me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- POPUP ANIMASI LANDING -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="hero-img">
+        <img src="cj.png" alt="Joji">
+      </div>
+      <div class="hero-text">
+        <h1>Hi, My Name is Joji!</h1>
+        <p>Joji adalah penyanyi, penulis lagu, dan produser musik asal Jepang yang dikenal dengan suara uniknya serta perpaduan R&B, lo-fi, dan soul dalam karyanya.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- Player -->
+ <div class="spotify-bar">
+  <div class="track-left">
+    <img src="cover.jpeg" alt="Album Cover" class="cover">
+    <div class="track-meta">
+      <h4>Glimpse of Us</h4>
+      <p>Joji</p>
+    </div>
+  </div>
+
+  <div class="track-center">
+    <div class="controls">
+      <button><img src="icons/shuffle.svg" alt="Shuffle"></button>
+      <button id="prevBtn"><img src="icons/prev.svg" alt="Prev"></button>
+      <button id="playBtn"><img src="icons/play.svg" alt="Play"></button>
+      <button id="nextBtn"><img src="icons/next.svg" alt="Next"></button>
+      <button><img src="icons/repeat.svg" alt="Repeat"></button>
+    </div>
+    <div class="progress">
+      <span id="currentTime">0:00</span>
+      <input type="range" id="progressBar" value="0" max="100">
+      <span id="duration">-4:40</span>
+    </div>
+  </div>
+
+  <div class="track-right">
+    <button id="volumeIcon"><img src="icons/volume-high.svg" alt="Volume"></button>
+    <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1">
+  </div>
+
+  <audio id="player" src="Glimpse Of Us.mp3"></audio>
+</div>
+
+
+  <!-- CONTACT MODAL -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Contact Me</h2>
+      <p>Pilih cara menghubungi:</p>
+      <div class="contact-options">
+        <a href="wazzsheesh@gmail.com" class="contact-btn">Email</a>
+        <a href="https://instagram.com/sushitrash" target="_blank" class="contact-btn">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  
+  
+  <script src="joji.js"></script>
+</body>
+</html>
